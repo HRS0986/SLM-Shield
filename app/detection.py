@@ -1,13 +1,18 @@
+from typing import Optional
+from dotenv import load_dotenv
 import torch
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from peft import PeftModel
-from transformers import AutoTokenizer, BitsAndBytesConfig, AutoModelForCausalLM
+from transformers import AutoTokenizer, BitsAndBytesConfig, AutoModelForCausalLM, TokenizersBackend, \
+    SentencePieceBackend
 
-model = None
-tokenizer = None
+model: PeftModel
+tokenizer : Optional[TokenizersBackend | SentencePieceBackend]
 BASE_MODEL = "google/gemma-3-1b-it"
+
+load_dotenv()
 
 @torch.inference_mode()
 def classify_with_adapter_with_confidence(prompt: str, adapter_name: str):
@@ -52,7 +57,6 @@ def build_prompt(text: str, adapter_name: str) -> str:
 
     return f"<start_of_turn>user\n{instruction}<end_of_turn>\n<start_of_turn>model\n"
 
-# 1. Define the Lifespan Event Handler
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global model, tokenizer

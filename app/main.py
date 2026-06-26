@@ -17,9 +17,9 @@ async def verify_prompt(request: PromptRequest):
         return {"decision": "INJECTION", "category": "role_violation", "confidence": f"{conf_role * 100:.2f}%"}
 
     # 2. Check Privilege Escalation
-    res_priv, conf_priv = classify_with_adapter_with_confidence(user_prompt, "privilege_escalation")
-    if "INJECTION" in res_priv:
-        return {"decision": "INJECTION", "category": "privilege_escalation", "confidence": f"{conf_priv * 100:.2f}%"}
+    res_privilege, conf_privilege = classify_with_adapter_with_confidence(user_prompt, "privilege_escalation")
+    if "INJECTION" in res_privilege:
+        return {"decision": "INJECTION", "category": "privilege_escalation", "confidence": f"{conf_privilege * 100:.2f}%"}
 
     # 3. Check Obfuscation
     res_obf, conf_obf = classify_with_adapter_with_confidence(user_prompt, "obfuscation")
@@ -27,3 +27,7 @@ async def verify_prompt(request: PromptRequest):
         return {"decision": "INJECTION", "category": "obfuscation", "confidence": f"{conf_obf * 100:.2f}%"}
 
     return {"decision": "BENIGN", "category": None, "confidence": f"{conf_obf * 100:.2f}%"}
+
+@app.get("/health")
+async def health():
+    return {"health": "ok"}
