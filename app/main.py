@@ -1,9 +1,18 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.detection import classify_with_adapter_with_confidence, lifespan
 from app.models import PromptRequest
 
 app = FastAPI(title="Realtime Prompt Injection Detection API", lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/verify-prompt")
 async def verify_prompt(request: PromptRequest):

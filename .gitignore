@@ -3,3 +3,4 @@
 .code
 .vscode
 .env
+app/__pycache__
