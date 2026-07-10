@@ -2,3 +2,6 @@
 .history
 .code
 .vscode
+.env
+app/__pycache__
+notebooks/unsloth_compiled_cache
