@@ -1,0 +1,14 @@
+{
+  "selected_slm": "role-and-instruction-violation",
+  "eval_split": "validation",
+  "eval_rows": 6744,
+  "accuracy": 0.9727164887307236,
+  "precision_injection": 0.9973527465254798,
+  "recall_injection": 0.8933017190278602,
+  "f1_injection": 0.9424640400250156,
+  "false_positive_rate": 0.0007909827961241843,
+  "tn": 5053,
+  "fp": 4,
+  "fn": 180,
+  "tp": 1507
+}
