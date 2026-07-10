@@ -11,6 +11,9 @@ from transformers import AutoTokenizer, BitsAndBytesConfig, AutoModelForCausalLM
 model: PeftModel
 tokenizer : Optional[TokenizersBackend | SentencePieceBackend]
 BASE_MODEL = "google/gemma-3-1b-it"
+ROLE_VIOLATION_ADAPTER = "role_violation"
+PRIVILEGE_ESCALATION_ADAPTER = "privilege_escalation"
+OBFUSCATION_ADAPTER = "obfuscation"
 
 load_dotenv()
 
@@ -46,11 +49,11 @@ def classify_with_adapter_with_confidence(prompt: str, adapter_name: str):
     return response, confidence
 
 def build_prompt(text: str, adapter_name: str) -> str:
-    if adapter_name == "role_violation":
+    if adapter_name == ROLE_VIOLATION_ADAPTER:
         instruction = f"Classify this prompt for instruction hierarchy abuse, role hijacking, or persona takeover.Prompt:{text}Answer using exactly one word: INJECTION or BENIGN"
-    elif adapter_name == "privilege_escalation":
+    elif adapter_name == PRIVILEGE_ESCALATION_ADAPTER:
         instruction = f"Classify this prompt for system-prompt extraction, administrator-mode claims, policy bypass, or privilege escalation.Prompt:{text}Answer using exactly one word: INJECTION or BENIGN"
-    elif adapter_name == "obfuscation":
+    elif adapter_name == OBFUSCATION_ADAPTER:
         instruction = f"Classify this prompt for hidden instructions, encoded text, delimiter abuse, prompt splitting, or evasive structure.Prompt:{text}Answer using exactly one word: INJECTION or BENIGN"
     else:
         instruction = f"Classify the following prompt.Prompt:{text}Answer using exactly one word: INJECTION or BENIGN"
@@ -81,13 +84,20 @@ async def lifespan(app: FastAPI):
     # Load primary adapter
     model = PeftModel.from_pretrained(
         base,
-        "hirushafernando/fyp-gemma3-1b-slm-a-qlora",
-        adapter_name="role_violation"
+        "hirushafernando/slm-shield-role-and-instruction-violation-qlora",
+        adapter_name=ROLE_VIOLATION_ADAPTER
     )
 
     # Load auxiliary adapters
-    model.load_adapter("hirushafernando/fyp-gemma3-1b-slm-b-qlora", adapter_name="privilege_escalation")
-    model.load_adapter("hirushafernando/fyp-gemma3-1b-slm-c-qlora", adapter_name="obfuscation")
+    model.load_adapter(
+        "hirushafernando/slm-shield-privilege-escalation-qlora",
+        adapter_name=PRIVILEGE_ESCALATION_ADAPTER
+    )
+
+    model.load_adapter(
+        "hirushafernando/slm-shield-obfuscation-and-evation-patterns-qlora",
+        adapter_name=OBFUSCATION_ADAPTER
+    )
 
     model.eval()
     print("--- Lifespan Startup: Pipeline ready for evaluation ---")
