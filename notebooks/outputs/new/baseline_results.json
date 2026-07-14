@@ -1,0 +1,69 @@
+{
+  "protocol": "corrected-native-prompt",
+  "model": "google/gemma-3-1b-it",
+  "eval_split": "test",
+  "quick_test": false,
+  "seed": 42,
+  "combined_set": {
+    "accuracy": 0.755536943979155,
+    "precision_injection": 0.5662945820854887,
+    "recall_injection": 0.36230621842884514,
+    "f1_injection": 0.44189504992564266,
+    "fpr": 0.10113643578185512,
+    "fnr": 0.6376937815711549,
+    "tn": 14158,
+    "fp": 1593,
+    "fn": 3661,
+    "tp": 2080,
+    "auroc": 0.7339589125491999,
+    "pr_auc": 0.5181926983212874,
+    "tpr_at_fpr_0.001": 0.013586483191081694,
+    "tpr_at_fpr_0.01": 0.07577077164257098,
+    "tpr_at_fpr_0.05": 0.2511757533530744,
+    "per_category_recall": {
+      "role-and-instruction-violation": 0.3623714458560194,
+      "privilege-escalation": 0.22988505747126436,
+      "obfuscation-and-evasion-patterns": 0.5005
+    },
+    "unparsed_fail_closed": 781,
+    "eval_rows": 21492
+  },
+  "per_source_dataset": {
+    "role-and-instruction-violation": {
+      "accuracy": 0.7782927193900434,
+      "precision_injection": 0.5826848249027238,
+      "recall_injection": 0.3623714458560194,
+      "f1_injection": 0.44684819097351736,
+      "fpr": 0.08518665607625099,
+      "fnr": 0.6376285541439807,
+      "tn": 4607,
+      "fp": 429,
+      "fn": 1054,
+      "tp": 599
+    },
+    "privilege-escalation": {
+      "accuracy": 0.7553218774044627,
+      "precision_injection": 0.6153846153846154,
+      "recall_injection": 0.22988505747126436,
+      "f1_injection": 0.33472803347280333,
+      "fpr": 0.05253940455341506,
+      "fnr": 0.7701149425287356,
+      "tn": 5410,
+      "fp": 300,
+      "fn": 1608,
+      "tp": 480
+    },
+    "obfuscation-and-evasion-patterns": {
+      "accuracy": 0.7340471092077088,
+      "precision_injection": 0.5367292225201072,
+      "recall_injection": 0.5005,
+      "f1_injection": 0.5179818887451487,
+      "fpr": 0.17262737262737263,
+      "fnr": 0.4995,
+      "tn": 4141,
+      "fp": 864,
+      "fn": 999,
+      "tp": 1001
+    }
+  }
+}

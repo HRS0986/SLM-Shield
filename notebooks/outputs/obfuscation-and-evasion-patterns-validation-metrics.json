@@ -1,0 +1,14 @@
+{
+  "selected_slm": "obfuscation-and-evasion-patterns",
+  "eval_split": "validation",
+  "eval_rows": 8000,
+  "accuracy": 0.967,
+  "precision_injection": 0.9977064220183486,
+  "recall_injection": 0.87,
+  "f1_injection": 0.9294871794871795,
+  "false_positive_rate": 0.0006666666666666666,
+  "tn": 5996,
+  "fp": 4,
+  "fn": 260,
+  "tp": 1740
+}

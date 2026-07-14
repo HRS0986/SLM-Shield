@@ -1,0 +1,331 @@
+{
+  "config": {
+    "n_boot": 2000,
+    "n_boot_auroc": 1000,
+    "ci": 95,
+    "seed": 42,
+    "rows": 21492,
+    "merged_available": false
+  },
+  "confidence_intervals": [
+    {
+      "detector": "system_OR",
+      "scope": "combined set",
+      "metric": "accuracy",
+      "value": 0.9365,
+      "ci_low": 0.9333,
+      "ci_high": 0.9396
+    },
+    {
+      "detector": "system_OR",
+      "scope": "combined set",
+      "metric": "precision",
+      "value": 0.8117,
+      "ci_low": 0.8026,
+      "ci_high": 0.8206
+    },
+    {
+      "detector": "system_OR",
+      "scope": "combined set",
+      "metric": "recall",
+      "value": 0.9925,
+      "ci_low": 0.9903,
+      "ci_high": 0.9946
+    },
+    {
+      "detector": "system_OR",
+      "scope": "combined set",
+      "metric": "f1",
+      "value": 0.893,
+      "ci_low": 0.8874,
+      "ci_high": 0.8984
+    },
+    {
+      "detector": "system_OR",
+      "scope": "combined set",
+      "metric": "fpr",
+      "value": 0.0839,
+      "ci_low": 0.0799,
+      "ci_high": 0.0882
+    },
+    {
+      "detector": "system_OR",
+      "scope": "combined set",
+      "metric": "fnr",
+      "value": 0.0075,
+      "ci_low": 0.0054,
+      "ci_high": 0.0097
+    },
+    {
+      "detector": "baseline",
+      "scope": "combined set",
+      "metric": "accuracy",
+      "value": 0.7555,
+      "ci_low": 0.75,
+      "ci_high": 0.7615
+    },
+    {
+      "detector": "baseline",
+      "scope": "combined set",
+      "metric": "precision",
+      "value": 0.5663,
+      "ci_low": 0.5503,
+      "ci_high": 0.5832
+    },
+    {
+      "detector": "baseline",
+      "scope": "combined set",
+      "metric": "recall",
+      "value": 0.3623,
+      "ci_low": 0.3495,
+      "ci_high": 0.3747
+    },
+    {
+      "detector": "baseline",
+      "scope": "combined set",
+      "metric": "f1",
+      "value": 0.4419,
+      "ci_low": 0.4284,
+      "ci_high": 0.4545
+    },
+    {
+      "detector": "baseline",
+      "scope": "combined set",
+      "metric": "fpr",
+      "value": 0.1011,
+      "ci_low": 0.0962,
+      "ci_high": 0.1057
+    },
+    {
+      "detector": "baseline",
+      "scope": "combined set",
+      "metric": "fnr",
+      "value": 0.6377,
+      "ci_low": 0.6253,
+      "ci_high": 0.6505
+    },
+    {
+      "detector": "adapter::role-and-instruction-violation",
+      "scope": "own test subset",
+      "metric": "accuracy",
+      "value": 0.9735,
+      "ci_low": 0.9697,
+      "ci_high": 0.9773
+    },
+    {
+      "detector": "adapter::role-and-instruction-violation",
+      "scope": "own test subset",
+      "metric": "precision",
+      "value": 0.9174,
+      "ci_low": 0.9048,
+      "ci_high": 0.9303
+    },
+    {
+      "detector": "adapter::role-and-instruction-violation",
+      "scope": "own test subset",
+      "metric": "recall",
+      "value": 0.9812,
+      "ci_low": 0.9749,
+      "ci_high": 0.9876
+    },
+    {
+      "detector": "adapter::role-and-instruction-violation",
+      "scope": "own test subset",
+      "metric": "f1",
+      "value": 0.9483,
+      "ci_low": 0.9405,
+      "ci_high": 0.9557
+    },
+    {
+      "detector": "adapter::role-and-instruction-violation",
+      "scope": "own test subset",
+      "metric": "fpr",
+      "value": 0.029,
+      "ci_low": 0.0244,
+      "ci_high": 0.0338
+    },
+    {
+      "detector": "adapter::role-and-instruction-violation",
+      "scope": "own test subset",
+      "metric": "fnr",
+      "value": 0.0188,
+      "ci_low": 0.0124,
+      "ci_high": 0.0251
+    },
+    {
+      "detector": "adapter::privilege-escalation",
+      "scope": "own test subset",
+      "metric": "accuracy",
+      "value": 0.9708,
+      "ci_low": 0.967,
+      "ci_high": 0.9746
+    },
+    {
+      "detector": "adapter::privilege-escalation",
+      "scope": "own test subset",
+      "metric": "precision",
+      "value": 0.9119,
+      "ci_low": 0.8999,
+      "ci_high": 0.9231
+    },
+    {
+      "detector": "adapter::privilege-escalation",
+      "scope": "own test subset",
+      "metric": "recall",
+      "value": 0.9861,
+      "ci_low": 0.9807,
+      "ci_high": 0.9909
+    },
+    {
+      "detector": "adapter::privilege-escalation",
+      "scope": "own test subset",
+      "metric": "f1",
+      "value": 0.9475,
+      "ci_low": 0.9405,
+      "ci_high": 0.9543
+    },
+    {
+      "detector": "adapter::privilege-escalation",
+      "scope": "own test subset",
+      "metric": "fpr",
+      "value": 0.0349,
+      "ci_low": 0.0301,
+      "ci_high": 0.0397
+    },
+    {
+      "detector": "adapter::privilege-escalation",
+      "scope": "own test subset",
+      "metric": "fnr",
+      "value": 0.0139,
+      "ci_low": 0.0091,
+      "ci_high": 0.0193
+    },
+    {
+      "detector": "adapter::obfuscation-and-evasion-patterns",
+      "scope": "own test subset",
+      "metric": "accuracy",
+      "value": 0.972,
+      "ci_low": 0.968,
+      "ci_high": 0.9759
+    },
+    {
+      "detector": "adapter::obfuscation-and-evasion-patterns",
+      "scope": "own test subset",
+      "metric": "precision",
+      "value": 0.9145,
+      "ci_low": 0.9029,
+      "ci_high": 0.9259
+    },
+    {
+      "detector": "adapter::obfuscation-and-evasion-patterns",
+      "scope": "own test subset",
+      "metric": "recall",
+      "value": 0.995,
+      "ci_low": 0.9916,
+      "ci_high": 0.9979
+    },
+    {
+      "detector": "adapter::obfuscation-and-evasion-patterns",
+      "scope": "own test subset",
+      "metric": "f1",
+      "value": 0.9531,
+      "ci_low": 0.9466,
+      "ci_high": 0.9594
+    },
+    {
+      "detector": "adapter::obfuscation-and-evasion-patterns",
+      "scope": "own test subset",
+      "metric": "fpr",
+      "value": 0.0372,
+      "ci_low": 0.0319,
+      "ci_high": 0.0423
+    },
+    {
+      "detector": "adapter::obfuscation-and-evasion-patterns",
+      "scope": "own test subset",
+      "metric": "fnr",
+      "value": 0.005,
+      "ci_low": 0.0021,
+      "ci_high": 0.0084
+    }
+  ],
+  "auroc_cis": [
+    {
+      "detector": "system_max_score",
+      "scope": "combined set",
+      "auroc": 0.9962,
+      "ci_low": 0.9955,
+      "ci_high": 0.9967
+    },
+    {
+      "detector": "baseline",
+      "scope": "combined set",
+      "auroc": 0.734,
+      "ci_low": 0.7267,
+      "ci_high": 0.7415
+    },
+    {
+      "detector": "adapter::role-and-instruction-violation",
+      "scope": "own test subset",
+      "auroc": 0.995,
+      "ci_low": 0.9928,
+      "ci_high": 0.9965
+    },
+    {
+      "detector": "adapter::privilege-escalation",
+      "scope": "own test subset",
+      "auroc": 0.998,
+      "ci_low": 0.9974,
+      "ci_high": 0.9985
+    },
+    {
+      "detector": "adapter::obfuscation-and-evasion-patterns",
+      "scope": "own test subset",
+      "auroc": 0.9985,
+      "ci_low": 0.9981,
+      "ci_high": 0.9989
+    }
+  ],
+  "mcnemar_tests": [
+    {
+      "comparison": "system_OR vs baseline",
+      "scope": "combined set",
+      "error_rate_1": 0.0635,
+      "error_rate_2": 0.2445,
+      "b_only_1_correct": 4873,
+      "c_only_2_correct": 984,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "adapter::role-and-instruction-violation vs baseline",
+      "scope": "own test subset",
+      "error_rate_1": 0.0265,
+      "error_rate_2": 0.2217,
+      "b_only_1_correct": 1395,
+      "c_only_2_correct": 89,
+      "p_value": 2.961541060667698e-302,
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "adapter::privilege-escalation vs baseline",
+      "scope": "own test subset",
+      "error_rate_1": 0.0292,
+      "error_rate_2": 0.2447,
+      "b_only_1_correct": 1806,
+      "c_only_2_correct": 126,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "adapter::obfuscation-and-evasion-patterns vs baseline",
+      "scope": "own test subset",
+      "error_rate_1": 0.028,
+      "error_rate_2": 0.266,
+      "b_only_1_correct": 1757,
+      "c_only_2_correct": 90,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    }
+  ]
+}

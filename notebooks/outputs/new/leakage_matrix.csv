@@ -1,0 +1,4 @@
+,role-and-instruction-violation,privilege-escalation,obfuscation-and-evasion-patterns,FPR_benign_pool
+role-and-instruction-violation,0.9812462189957653,0.7155172413793104,0.219,0.022411275474573042
+privilege-escalation,0.970356926799758,0.9861111111111112,0.251,0.03904513999111168
+obfuscation-and-evasion-patterns,0.7761645493042952,0.5253831417624522,0.995,0.03802933147101771

@@ -1,0 +1,137 @@
+{
+  "protocol": "corrected-native-prompt",
+  "config": {
+    "eval_split": "test",
+    "rows": 21492,
+    "quick_test": false,
+    "adapter_order": [
+      "role-and-instruction-violation",
+      "privilege-escalation",
+      "obfuscation-and-evasion-patterns"
+    ],
+    "seed": 42
+  },
+  "per_adapter_native_subset": {
+    "role-and-instruction-violation": {
+      "accuracy": 0.9735386455374495,
+      "precision_injection": 0.917420814479638,
+      "recall_injection": 0.9812462189957653,
+      "f1_injection": 0.9482607424729611,
+      "fpr": 0.028991262907069104,
+      "fnr": 0.018753781004234724,
+      "tn": 4890,
+      "fp": 146,
+      "fn": 31,
+      "tp": 1622
+    },
+    "privilege-escalation": {
+      "accuracy": 0.9707617337778918,
+      "precision_injection": 0.9118689105403012,
+      "recall_injection": 0.9861111111111112,
+      "f1_injection": 0.9475379659456972,
+      "fpr": 0.034851138353765326,
+      "fnr": 0.013888888888888888,
+      "tn": 5511,
+      "fp": 199,
+      "fn": 29,
+      "tp": 2059
+    },
+    "obfuscation-and-evasion-patterns": {
+      "accuracy": 0.9720199857244826,
+      "precision_injection": 0.9145220588235294,
+      "recall_injection": 0.995,
+      "f1_injection": 0.9530651340996169,
+      "fpr": 0.037162837162837165,
+      "fnr": 0.005,
+      "tn": 4819,
+      "fp": 186,
+      "fn": 10,
+      "tp": 1990
+    }
+  },
+  "leakage_matrix": {
+    "role-and-instruction-violation": {
+      "role-and-instruction-violation": 0.981246,
+      "privilege-escalation": 0.970357,
+      "obfuscation-and-evasion-patterns": 0.776165
+    },
+    "privilege-escalation": {
+      "role-and-instruction-violation": 0.715517,
+      "privilege-escalation": 0.986111,
+      "obfuscation-and-evasion-patterns": 0.525383
+    },
+    "obfuscation-and-evasion-patterns": {
+      "role-and-instruction-violation": 0.219,
+      "privilege-escalation": 0.251,
+      "obfuscation-and-evasion-patterns": 0.995
+    },
+    "FPR_benign_pool": {
+      "role-and-instruction-violation": 0.022411,
+      "privilege-escalation": 0.039045,
+      "obfuscation-and-evasion-patterns": 0.038029
+    }
+  },
+  "system_or_gate": {
+    "accuracy": 0.9364879955332217,
+    "precision_injection": 0.8116809116809117,
+    "recall_injection": 0.9925100156767114,
+    "f1_injection": 0.8930334613274822,
+    "fpr": 0.08393117897276363,
+    "fnr": 0.007489984323288626,
+    "tn": 14429,
+    "fp": 1322,
+    "fn": 43,
+    "tp": 5698,
+    "per_adapter_fpr_on_benign_pool": {
+      "role-and-instruction-violation": 0.022411275474573042,
+      "privilege-escalation": 0.03904513999111168,
+      "obfuscation-and-evasion-patterns": 0.03802933147101771
+    },
+    "analytical_fpr_independence": 0.09630682677295255
+  },
+  "system_max_score_fusion": {
+    "auroc": 0.9961648849118784,
+    "pr_auc": 0.9902517032192798,
+    "tpr_at_fpr_0.001": 0.6037275735934506,
+    "tpr_at_fpr_0.01": 0.9536666086047727,
+    "tpr_at_fpr_0.05": 0.98745863090054
+  },
+  "early_exit": {
+    "mean_adapters_invoked": 2.579564489112228,
+    "benign": 2.9254650498381056,
+    "injection": 1.6305521686117401,
+    "stage_distribution": {
+      "role-and-instruction-violation": 3554,
+      "obfuscation-and-evasion-patterns": 1390,
+      "privilege-escalation": 754
+    }
+  },
+  "category_attribution_accuracy": 0.6277641277641277,
+  "attribution_matrix": {
+    "role-and-instruction-violation": {
+      "role-and-instruction-violation": 1622,
+      "privilege-escalation": 1494,
+      "obfuscation-and-evasion-patterns": 438
+    },
+    "privilege-escalation": {
+      "role-and-instruction-violation": 16,
+      "privilege-escalation": 567,
+      "obfuscation-and-evasion-patterns": 171
+    },
+    "obfuscation-and-evasion-patterns": {
+      "role-and-instruction-violation": 2,
+      "privilege-escalation": 0,
+      "obfuscation-and-evasion-patterns": 1388
+    },
+    "missed": {
+      "role-and-instruction-violation": 13,
+      "privilege-escalation": 27,
+      "obfuscation-and-evasion-patterns": 3
+    }
+  },
+  "unparsed_counts": {
+    "role-and-instruction-violation": 228,
+    "privilege-escalation": 447,
+    "obfuscation-and-evasion-patterns": 658
+  }
+}
