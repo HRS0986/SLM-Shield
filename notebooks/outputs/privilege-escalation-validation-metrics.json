@@ -1,0 +1,14 @@
+{
+  "selected_slm": "privilege-escalation",
+  "eval_split": "validation",
+  "eval_rows": 8356,
+  "accuracy": 0.922091910004787,
+  "precision_injection": 0.763177159590044,
+  "recall_injection": 0.9980852082336046,
+  "f1_injection": 0.864965774735532,
+  "false_positive_rate": 0.1032391894048189,
+  "tn": 5620,
+  "fp": 647,
+  "fn": 4,
+  "tp": 2085
+}
