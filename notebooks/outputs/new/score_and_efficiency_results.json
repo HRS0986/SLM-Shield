@@ -1,0 +1,149 @@
+{
+  "protocol": "v2-corrected, score-based (single forward pass, INJECTION-vs-BENIGN first-token log-odds)",
+  "config": {
+    "eval_split": "test",
+    "rows": 21492,
+    "quick_test": false,
+    "target_fprs": [
+      0.001,
+      0.01,
+      0.05
+    ],
+    "seed": 42,
+    "prompt_mode": "native"
+  },
+  "score_metrics": {
+    "auroc": {
+      "role-and-instruction-violation (own test set)": 0.995156,
+      "role-and-instruction-violation (combined set)": 0.906839,
+      "privilege-escalation (own test set)": 0.998024,
+      "privilege-escalation (combined set)": 0.953232,
+      "obfuscation-and-evasion-patterns (own test set)": 0.998589,
+      "obfuscation-and-evasion-patterns (combined set)": 0.954888,
+      "SYSTEM max-score fusion (combined set)": 0.996298
+    },
+    "pr_auc": {
+      "role-and-instruction-violation (own test set)": 0.988679,
+      "role-and-instruction-violation (combined set)": 0.852368,
+      "privilege-escalation (own test set)": 0.995119,
+      "privilege-escalation (combined set)": 0.909791,
+      "obfuscation-and-evasion-patterns (own test set)": 0.996203,
+      "obfuscation-and-evasion-patterns (combined set)": 0.919689,
+      "SYSTEM max-score fusion (combined set)": 0.990563
+    },
+    "acc_at_threshold_0": {
+      "role-and-instruction-violation (own test set)": 0.957393,
+      "role-and-instruction-violation (combined set)": 0.870603,
+      "privilege-escalation (own test set)": 0.978456,
+      "privilege-escalation (combined set)": 0.902755,
+      "obfuscation-and-evasion-patterns (own test set)": 0.974732,
+      "obfuscation-and-evasion-patterns (combined set)": 0.907966,
+      "SYSTEM max-score fusion (combined set)": 0.933371
+    },
+    "tpr_at_fpr_0.001": {
+      "role-and-instruction-violation (own test set)": 0.709014,
+      "role-and-instruction-violation (combined set)": 0.306741,
+      "privilege-escalation (own test set)": 0.91092,
+      "privilege-escalation (combined set)": 0.4332,
+      "obfuscation-and-evasion-patterns (own test set)": 0.846,
+      "obfuscation-and-evasion-patterns (combined set)": 0.388782,
+      "SYSTEM max-score fusion (combined set)": 0.610695
+    },
+    "tpr_at_fpr_0.01": {
+      "role-and-instruction-violation (own test set)": 0.941319,
+      "role-and-instruction-violation (combined set)": 0.55513,
+      "privilege-escalation (own test set)": 0.961207,
+      "privilege-escalation (combined set)": 0.654938,
+      "obfuscation-and-evasion-patterns (own test set)": 0.958,
+      "obfuscation-and-evasion-patterns (combined set)": 0.645184,
+      "SYSTEM max-score fusion (combined set)": 0.955583
+    },
+    "tpr_at_fpr_0.05": {
+      "role-and-instruction-violation (own test set)": 0.980641,
+      "role-and-instruction-violation (combined set)": 0.678279,
+      "privilege-escalation (own test set)": 0.987548,
+      "privilege-escalation (combined set)": 0.740638,
+      "obfuscation-and-evasion-patterns (own test set)": 0.9985,
+      "obfuscation-and-evasion-patterns (combined set)": 0.835395,
+      "SYSTEM max-score fusion (combined set)": 0.98711
+    }
+  },
+  "operating_points_1pct_fpr": {
+    "threshold_for_1pct_fpr": {
+      "role-and-instruction-violation": 1.357733,
+      "privilege-escalation": 0.453252,
+      "obfuscation-and-evasion-patterns": 1.655086,
+      "SYSTEM max-score": 2.385512
+    },
+    "fpr": {
+      "role-and-instruction-violation": 0.00973,
+      "privilege-escalation": 0.009982,
+      "obfuscation-and-evasion-patterns": 0.007193,
+      "SYSTEM max-score": 0.009968
+    },
+    "recall_at_that_threshold": {
+      "role-and-instruction-violation": 0.941319,
+      "privilege-escalation": 0.961207,
+      "obfuscation-and-evasion-patterns": 0.958,
+      "SYSTEM max-score": 0.955583
+    }
+  },
+  "efficiency": {
+    "vram_profile_gb": {
+      "backbone_only_gb": 0.898,
+      "backbone_plus_3_adapters_gb": 1.044,
+      "peak_inference_scoring_gb": 4.947
+    },
+    "adapter_swap_ms_warm": {
+      "role-and-instruction-violation": 13.188,
+      "privilege-escalation": 13.09,
+      "obfuscation-and-evasion-patterns": 13.771
+    },
+    "adapter_repo_size_mb": {
+      "role-and-instruction-violation": 87.2,
+      "privilege-escalation": 87.2,
+      "obfuscation-and-evasion-patterns": 87.2
+    },
+    "lora_trainable_params": {
+      "role-and-instruction-violation": 13045760,
+      "privilege-escalation": 13045760,
+      "obfuscation-and-evasion-patterns": 13045760
+    },
+    "latency_batch1_ms": {
+      "role-and-instruction-violation": {
+        "generation_mean_ms": 434.6,
+        "generation_p95_ms": 476.6,
+        "scoring_mean_ms": 166.3,
+        "scoring_p95_ms": 184.3
+      },
+      "privilege-escalation": {
+        "generation_mean_ms": 435.3,
+        "generation_p95_ms": 457.9,
+        "scoring_mean_ms": 167.9,
+        "scoring_p95_ms": 193.2
+      },
+      "obfuscation-and-evasion-patterns": {
+        "generation_mean_ms": 438.1,
+        "generation_p95_ms": 472.3,
+        "scoring_mean_ms": 168.7,
+        "scoring_p95_ms": 190.2
+      }
+    },
+    "estimated_pipeline_latency_ms": {
+      "benign_path_generation_ms": 1334.7,
+      "benign_path_scoring_ms": 529.6,
+      "note": "benign path = all 3 stages + 2 warm swaps; detected injections exit earlier"
+    },
+    "throughput_scoring_prompts_per_s": {
+      "1": 6.23,
+      "2": 11.39,
+      "4": 14.47,
+      "8": 10.93,
+      "16": 7.01
+    },
+    "hardware": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}
