@@ -5,3 +5,5 @@
 .env
 app/__pycache__
 notebooks/unsloth_compiled_cache
+notebooks/outputs/new/*.docx
+notebooks/outputs/new/*.pdf
