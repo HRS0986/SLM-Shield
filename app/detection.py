@@ -80,7 +80,7 @@ async def lifespan(app: FastAPI):
         BASE_MODEL,
         quantization_config=quant_config,
         device_map="auto",
-        dtype=torch.float16
+        torch_dtype=torch.float16
     )
 
     # Load primary adapter
